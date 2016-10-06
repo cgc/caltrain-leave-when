@@ -1,0 +1,14 @@
+[
+{"fare_id":"OW_1_20160228","price":"3.75","currency_type":"USD","payment_method":"1","transfers":"0","transfer_duration":""}
+,
+{"fare_id":"OW_2_20160228","price":"5.75","currency_type":"USD","payment_method":"1","transfers":"0","transfer_duration":""}
+,
+{"fare_id":"OW_3_20160228","price":"7.75","currency_type":"USD","payment_method":"1","transfers":"0","transfer_duration":""}
+,
+{"fare_id":"OW_4_20160228","price":"9.75","currency_type":"USD","payment_method":"1","transfers":"0","transfer_duration":""}
+,
+{"fare_id":"OW_5_20160228","price":"11.75","currency_type":"USD","payment_method":"1","transfers":"0","transfer_duration":""}
+,
+{"fare_id":"OW_6_20160228","price":"13.75","currency_type":"USD","payment_method":"1","transfers":"0","transfer_duration":""}
+
+]

@@ -1,0 +1,22 @@
+{
+  "name": "leave-when",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "csvtojson": "^1.0.2",
+    "react-scripts": "0.6.1"
+  },
+  "dependencies": {
+    "lodash": "^4.16.3",
+    "moment": "^2.15.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-data": "for file in data/caltrain/*.txt; do csvtojson --checkType=false $file > ${file%.*}.json; done"
+  }
+}

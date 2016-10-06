@@ -1,0 +1,43 @@
+:root {
+  --caltrain-red: #F0B2A1;
+  --caltrain-yellow: #F7E89D;
+}
+
+.App-header {
+  width: 100%;
+  position: fixed;
+  border-bottom: 1px rgba(0, 0, 0, 0.6) solid;
+  background: white;
+  top: 0;
+}
+
+.App-body {
+  max-width: 400px;
+  margin: 1.7rem auto 0;
+}
+
+.Trip {
+  border: 1px rgba(0, 0, 0, 0.6) solid;
+  border-bottom-width: 0;
+  padding: 0.25rem;
+}
+
+.Trip.is-active {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.Trip.is-over {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.Trip:first-child {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.Trip-info {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+}
