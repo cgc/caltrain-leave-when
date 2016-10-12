@@ -1,5 +1,6 @@
 {
   "name": "leave-when",
+  "homepage": "https://cgc.github.io/caltrain-leave-when/",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
