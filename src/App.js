@@ -6,7 +6,7 @@ import trips from '../data/caltrain/trips';
 import calendar from '../data/caltrain/calendar';
 import calendarDates from '../data/caltrain/calendar_dates';
 import routes from '../data/caltrain/routes';
-import {groupBy} from 'lodash';
+import {groupBy,minBy} from 'lodash';
 import moment from 'moment';
 
 for (const time of stopTimes) {
@@ -101,6 +101,12 @@ function tripsForServiceId(serviceId, fromStopId, toStopId) {
   return result;
 }
 
+function findNearestStop(lat, lon) {
+  return minBy(stops, s =>
+    Math.pow(parseFloat(s.stop_lat) - lat, 2) + Math.pow(parseFloat(s.stop_lon) - lon, 2)
+  ).stop_id;
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -113,6 +119,7 @@ class App extends Component {
     this.onChangeTo = this.onChangeTo.bind(this);
     this.reverse = this.reverse.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
+    this.findNearest = this.findNearest.bind(this);
   }
 
   onChangeFrom(e) {
@@ -131,6 +138,14 @@ class App extends Component {
     this.setState({
       from: this.state.to,
       to: this.state.from,
+    });
+  }
+
+  findNearest() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      this.setState({
+        from: findNearestStop(position.coords.latitude, position.coords.longitude)
+      });
     });
   }
 
@@ -161,6 +176,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
+          <button onClick={this.findNearest}>&#8982;</button>
           <select value={this.state.from} onChange={this.onChangeFrom}>
             {stopOptions}</select>
           &rarr;
