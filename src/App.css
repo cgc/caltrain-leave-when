@@ -9,6 +9,9 @@
   border-bottom: 1px rgba(0, 0, 0, 0.6) solid;
   background: white;
   top: 0;
+  text-align: center;
+  /* avoids issues with App-body showing up in <input> background */
+  z-index: 1;
 }
 
 .App-body {
